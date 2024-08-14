@@ -8,12 +8,12 @@
 
 ## Build
  ```bash
-    npm run build
+    pnpm run build
  ```
 
 ## Run
  ```bash 
- npm run start --prompt="A ginger cockapoo cheerfully running through an english garden on a spring day" --model="fluxschnell"
+ pnpm run start --prompt="A ginger cockapoo cheerfully running through an english garden on a spring day" --model="fluxschnell"
  ```
 
   - Change the prompt to whatever
