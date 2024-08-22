@@ -6,7 +6,7 @@ const replicate = new Replicate({ auth: Config.token });
 
 // save a URL to FS
 //
-async function downloadImage(url: string, filename: string) {
+async function downloadImage(url: string, filename: string): Promise<void> {
     try {
         const response = await fetch(url);
 
@@ -47,7 +47,8 @@ async function generate(model: ModelIdentifier, prmpt: string): Promise<void> {
 
         let resultImages = []
         switch (model) {
-            case Config.models.fluxschnell: {
+            case Config.models.fluxschnell:
+            case Config.models.fluxdev: {
                 resultImages = output as any[]
             }; break;
             case Config.models.fluxpro: {

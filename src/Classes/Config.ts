@@ -30,6 +30,7 @@ export default class Config {
     static get models (): ModelList {
         return {
             "fluxschnell": "black-forest-labs/flux-schnell",
+            "fluxdev": "black-forest-labs/flux-dev",
             "fluxpro": "black-forest-labs/flux-pro"
         }
     }
