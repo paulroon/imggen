@@ -13,8 +13,15 @@
 
 ## Run
  ```bash 
- pnpm run start --prompt="A ginger cockapoo cheerfully running through an english garden on a spring day" --model="fluxschnell"
+ pnpm run start 
+   --prompt="A ginger cockapoo cheerfully running through an english garden on a spring day"
+   --model="fluxschnell"
  ```
+
+ Options are: 
+  * fluxschnell ***[DEFAULT]*** - low cost and fast
+  * fluxdev - faster but better quality
+  * fluxpro - most expensive highest quality output
 
   - Change the prompt to whatever
   - The model name alias mapping can be found in ```src/Classes/Config.ts``` 

@@ -19,6 +19,8 @@ const argv = yargs(hideBin(process.argv)).argv as Argv;
 
 export default class Config {
 
+    static currentModel: string = "fluxschnell"
+
     static get token (): string {
         if (!process.env.REPLICATE_TOKEN) {
             console.error('replicate token is missing. Please set it in your .env file.');
@@ -45,21 +47,16 @@ export default class Config {
     }
 
     static get model (): ModelIdentifier {
-        const m = argv.model
-        if (!m || typeof Config.models[m] == "undefined") {
-            console.error('Please provide a text prompt using --model="[ fluxscnell | fluxpro ]"');
-            process.exit(1);
+        Config.currentModel = argv.model || "fluxschnell"
+        if (typeof Config.models[Config.currentModel] == "undefined") {
+            console.error(`Model not specified [ fluxschnell | fluxdev | fluxpro ]: Defaulting to 'fluxschnell'`);
+            Config.currentModel = "fluxschnell"
         }
-        return Config.models[m]
+        return Config.models[Config.currentModel] as ModelIdentifier
     }
 
     static get modelAlias (): string {
-        const m = argv.model
-        if (!m || typeof Config.models[m] == "undefined") {
-            console.error('Please provide a text prompt using --model="[ fluxscnell | fluxpro ]"');
-            process.exit(1);
-        }
-        return m
+        return Config.currentModel
     }
 
 }
