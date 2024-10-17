@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import Replicate from "replicate"
 import FileWriter from "./Classes/FileWriter"
 import Config, { ModelIdentifier } from "./Classes/Config"
